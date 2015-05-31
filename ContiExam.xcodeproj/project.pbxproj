@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		8B6A512D1B1A823B00E86CF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A512C1B1A823B00E86CF3 /* main.m */; };
 		8B6A51301B1A823B00E86CF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A512F1B1A823B00E86CF3 /* AppDelegate.m */; };
-		8B6A51331B1A823B00E86CF3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A51321B1A823B00E86CF3 /* ViewController.m */; };
 		8B6A51361B1A823B00E86CF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B6A51341B1A823B00E86CF3 /* Main.storyboard */; };
 		8B6A51381B1A823B00E86CF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6A51371B1A823B00E86CF3 /* Images.xcassets */; };
 		8B6A513B1B1A823B00E86CF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B6A51391B1A823B00E86CF3 /* LaunchScreen.xib */; };
 		8B6A51471B1A823B00E86CF3 /* ContiExamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A51461B1A823B00E86CF3 /* ContiExamTests.m */; };
+		8B6A51531B1ABAF500E86CF3 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A51521B1ABAF500E86CF3 /* MainTabBarController.m */; };
+		8B6A51561B1AC69500E86CF3 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A51551B1AC69500E86CF3 /* PageContentViewController.m */; };
+		8B6A51591B1AF50500E86CF3 /* IntroPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A51581B1AF50500E86CF3 /* IntroPageViewController.m */; };
+		8B6A515C1B1B0DBF00E86CF3 /* continental_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B6A515B1B1B0DBF00E86CF3 /* continental_logo.png */; };
+		8B6A51601B1B19B200E86CF3 /* BasePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A515F1B1B19B200E86CF3 /* BasePageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +36,21 @@
 		8B6A512C1B1A823B00E86CF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8B6A512E1B1A823B00E86CF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8B6A512F1B1A823B00E86CF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8B6A51311B1A823B00E86CF3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8B6A51321B1A823B00E86CF3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8B6A51351B1A823B00E86CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B6A51371B1A823B00E86CF3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8B6A513A1B1A823B00E86CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8B6A51401B1A823B00E86CF3 /* ContiExamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContiExamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6A51451B1A823B00E86CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B6A51461B1A823B00E86CF3 /* ContiExamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContiExamTests.m; sourceTree = "<group>"; };
+		8B6A51511B1ABAF500E86CF3 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		8B6A51521B1ABAF500E86CF3 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		8B6A51541B1AC69500E86CF3 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		8B6A51551B1AC69500E86CF3 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		8B6A51571B1AF50500E86CF3 /* IntroPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroPageViewController.h; sourceTree = "<group>"; };
+		8B6A51581B1AF50500E86CF3 /* IntroPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroPageViewController.m; sourceTree = "<group>"; };
+		8B6A515B1B1B0DBF00E86CF3 /* continental_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = continental_logo.png; sourceTree = "<group>"; };
+		8B6A515E1B1B19B200E86CF3 /* BasePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePageViewController.h; sourceTree = "<group>"; };
+		8B6A515F1B1B19B200E86CF3 /* BasePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +92,10 @@
 		8B6A51291B1A823B00E86CF3 /* ContiExam */ = {
 			isa = PBXGroup;
 			children = (
+				8B6A515A1B1B0DBF00E86CF3 /* imgs */,
+				8B6A51501B1ABA0400E86CF3 /* Controllers */,
 				8B6A512E1B1A823B00E86CF3 /* AppDelegate.h */,
 				8B6A512F1B1A823B00E86CF3 /* AppDelegate.m */,
-				8B6A51311B1A823B00E86CF3 /* ViewController.h */,
-				8B6A51321B1A823B00E86CF3 /* ViewController.m */,
 				8B6A51341B1A823B00E86CF3 /* Main.storyboard */,
 				8B6A51371B1A823B00E86CF3 /* Images.xcassets */,
 				8B6A51391B1A823B00E86CF3 /* LaunchScreen.xib */,
@@ -117,6 +128,37 @@
 				8B6A51451B1A823B00E86CF3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8B6A51501B1ABA0400E86CF3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B6A515D1B1B186200E86CF3 /* Intro */,
+				8B6A51511B1ABAF500E86CF3 /* MainTabBarController.h */,
+				8B6A51521B1ABAF500E86CF3 /* MainTabBarController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8B6A515A1B1B0DBF00E86CF3 /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				8B6A515B1B1B0DBF00E86CF3 /* continental_logo.png */,
+			);
+			path = imgs;
+			sourceTree = "<group>";
+		};
+		8B6A515D1B1B186200E86CF3 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				8B6A51541B1AC69500E86CF3 /* PageContentViewController.h */,
+				8B6A51551B1AC69500E86CF3 /* PageContentViewController.m */,
+				8B6A51571B1AF50500E86CF3 /* IntroPageViewController.h */,
+				8B6A51581B1AF50500E86CF3 /* IntroPageViewController.m */,
+				8B6A515E1B1B19B200E86CF3 /* BasePageViewController.h */,
+				8B6A515F1B1B19B200E86CF3 /* BasePageViewController.m */,
+			);
+			name = Intro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +243,7 @@
 			files = (
 				8B6A51361B1A823B00E86CF3 /* Main.storyboard in Resources */,
 				8B6A513B1B1A823B00E86CF3 /* LaunchScreen.xib in Resources */,
+				8B6A515C1B1B0DBF00E86CF3 /* continental_logo.png in Resources */,
 				8B6A51381B1A823B00E86CF3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,9 +262,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B6A51331B1A823B00E86CF3 /* ViewController.m in Sources */,
 				8B6A51301B1A823B00E86CF3 /* AppDelegate.m in Sources */,
+				8B6A51561B1AC69500E86CF3 /* PageContentViewController.m in Sources */,
+				8B6A51531B1ABAF500E86CF3 /* MainTabBarController.m in Sources */,
 				8B6A512D1B1A823B00E86CF3 /* main.m in Sources */,
+				8B6A51601B1B19B200E86CF3 /* BasePageViewController.m in Sources */,
+				8B6A51591B1AF50500E86CF3 /* IntroPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +462,7 @@
 				8B6A514C1B1A823B00E86CF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8B6A514D1B1A823B00E86CF3 /* Build configuration list for PBXNativeTarget "ContiExamTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +471,7 @@
 				8B6A514F1B1A823B00E86CF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddUserViewController.h"
 
 @interface ContiTeamTableViewController : UITableViewController
 
 // Members
 @property (nonatomic, strong) NSArray *memberNames;
 @property (nonatomic, strong) NSArray *memberPhotos;
+@property (strong, nonatomic) AddUserViewController* addUserVC;
+
+// Actions
+- (IBAction)addUserPressed:(id)sender;
 
 @end

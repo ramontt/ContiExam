@@ -24,6 +24,7 @@
 		8B6A51731B1BC7C900E86CF3 /* alucard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6A51701B1BC7C900E86CF3 /* alucard.jpg */; };
 		8B6A51741B1BC7C900E86CF3 /* maria.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6A51711B1BC7C900E86CF3 /* maria.jpg */; };
 		8B6A51751B1BC7C900E86CF3 /* richter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B6A51721B1BC7C900E86CF3 /* richter.jpg */; };
+		8B9687BF1B22B573000A76A4 /* AddUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B9687BE1B22B573000A76A4 /* AddUserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		8B6A51701B1BC7C900E86CF3 /* alucard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = alucard.jpg; sourceTree = "<group>"; };
 		8B6A51711B1BC7C900E86CF3 /* maria.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = maria.jpg; sourceTree = "<group>"; };
 		8B6A51721B1BC7C900E86CF3 /* richter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = richter.jpg; sourceTree = "<group>"; };
+		8B9687BD1B22B573000A76A4 /* AddUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserViewController.h; sourceTree = "<group>"; };
+		8B9687BE1B22B573000A76A4 /* AddUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,12 +186,22 @@
 		8B6A51691B1BB33800E86CF3 /* ContiTeam */ = {
 			isa = PBXGroup;
 			children = (
+				8B9687BB1B22B514000A76A4 /* AddUser */,
 				8B6A516A1B1BB35F00E86CF3 /* ContiTeamTableViewController.h */,
 				8B6A516B1B1BB35F00E86CF3 /* ContiTeamTableViewController.m */,
 				8B6A516D1B1BBC5A00E86CF3 /* MemberTableViewCell.h */,
 				8B6A516E1B1BBC5A00E86CF3 /* MemberTableViewCell.m */,
 			);
 			name = ContiTeam;
+			sourceTree = "<group>";
+		};
+		8B9687BB1B22B514000A76A4 /* AddUser */ = {
+			isa = PBXGroup;
+			children = (
+				8B9687BD1B22B573000A76A4 /* AddUserViewController.h */,
+				8B9687BE1B22B573000A76A4 /* AddUserViewController.m */,
+			);
+			name = AddUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +317,7 @@
 				8B6A512D1B1A823B00E86CF3 /* main.m in Sources */,
 				8B6A51601B1B19B200E86CF3 /* BasePageViewController.m in Sources */,
 				8B6A51591B1AF50500E86CF3 /* IntroPageViewController.m in Sources */,
+				8B9687BF1B22B573000A76A4 /* AddUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

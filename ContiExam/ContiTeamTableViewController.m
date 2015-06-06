@@ -31,6 +31,8 @@
     _memberPhotos = @[@"richter.jpg",
                       @"maria.jpg",
                       @"alucard.jpg"];
+    
+    _addUserVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AddUserViewController"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,5 +111,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)addUserPressed:(id)sender
+{
+    //NSLog( @"Is add user beig presented? ... [%d]", _addUserVC.view.hidden );
+    
+    if( self.presentedViewController != _addUserVC )
+    {
+        self.providesPresentationContextTransitionStyle = YES;
+        self.definesPresentationContext = YES;
+        [_addUserVC setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+        [self presentViewController:_addUserVC animated:NO completion:nil];
+    }
+}
 
 @end

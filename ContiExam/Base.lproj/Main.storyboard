@@ -116,23 +116,43 @@
             </objects>
             <point key="canvasLocation" x="829" y="1164"/>
         </scene>
-        <!--View Controller-->
+        <!--Conti Team-->
         <scene sceneID="vOV-2X-zFD">
             <objects>
-                <viewController id="BEQ-Xh-k32" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LDt-Dm-jfe">
+                <viewController id="BEQ-Xh-k32" customClass="ContiTeamTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kzc-b5-HIz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="czi-xT-kth">
-                                <rect key="frame" x="0.0" y="20" width="320" height="553"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.64705884459999996" green="0.92941182850000004" blue="0.76862752440000004" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="4Tp-8m-ScM"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memberTableCell" id="Kir-fz-Tva" customClass="MemberTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kir-fz-Tva" id="gCB-Qc-kjG">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="RrX-SC-DnO" userLabel="memberPhoto">
+                                            <rect key="frame" x="8" y="4" width="35" height="35"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Member Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mai-48-Tx0" userLabel="memberName">
+                                            <rect key="frame" x="51" y="11" width="261" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgMemberPhoto" destination="RrX-SC-DnO" id="1Fj-jg-dhT"/>
+                                    <outlet property="lblMemberName" destination="mai-48-Tx0" id="z4u-AD-esd"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Conti Team" image="continental_horse_black_32.png" id="4Tp-8m-ScM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPx-wC-kkW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,6 +179,9 @@
             <point key="canvasLocation" x="402" y="451"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="continental_horse_black_32.png" width="32" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

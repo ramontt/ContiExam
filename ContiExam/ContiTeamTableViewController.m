@@ -24,15 +24,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _memberNames = @[@"Richter",
-                     @"Maria",
-                     @"Alucard"];
+    _memberNames = [[NSMutableArray alloc] initWithObjects: @"Richter", @"Maria", @"Alucard", nil];
     
-    _memberPhotos = @[@"richter.jpg",
-                      @"maria.jpg",
-                      @"alucard.jpg"];
+    _memberPhotos = [[NSMutableArray alloc] initWithObjects: @"richter.jpg", @"maria.jpg", @"alucard.jpg", nil];
     
     _addUserVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AddUserViewController"];
+    _addUserVC.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +60,7 @@
     long row = [indexPath row];
     
     cell.lblMemberName.text = _memberNames[row];
-    cell.imgMemberPhoto.image = [UIImage imageNamed: _memberPhotos[row]];
+    //cell.imgMemberPhoto.image = [UIImage imageNamed: _memberPhotos[row]];
     
     return cell;
 }
@@ -123,6 +120,16 @@
         [_addUserVC setModalPresentationStyle:UIModalPresentationOverCurrentContext];
         [self presentViewController:_addUserVC animated:NO completion:nil];
     }
+}
+
+#pragma mark - AddUserControllerDelegate
+
+-(void) addNewMemberWithName:(NSString *)name andImage:(UIImage *)image
+{
+    NSLog( @"New member name: %@", name );
+    [_memberNames addObject: name];
+    [_memberTbl reloadData];
+    #pragma unused( image )
 }
 
 @end

@@ -8,13 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddUserViewController : UIViewController
+@protocol AddUserControllerDelegate <NSObject>
+- (void)addNewMemberWithName:(NSString*)name andImage:(UIImage*)image;
+@end
+
+@interface AddUserViewController : UIViewController <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 // Outlets
+@property (weak, nonatomic) IBOutlet UITextField *nameTxt;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
+@property (weak, nonatomic) IBOutlet UIImageView *memberImg;
+@property (weak, nonatomic) id <AddUserControllerDelegate> delegate;
+
 
 // Actions
+- (IBAction)addPhotoPressed:(id)sender;
 - (IBAction)okButtonPressed:(id)sender;
 - (IBAction)cancelButtonPressed:(id)sender;
 

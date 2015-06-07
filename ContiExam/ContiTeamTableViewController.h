@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "AddUserViewController.h"
 
-@interface ContiTeamTableViewController : UITableViewController
+@interface ContiTeamTableViewController : UITableViewController <AddUserControllerDelegate>
 
 // Members
-@property (nonatomic, strong) NSArray *memberNames;
-@property (nonatomic, strong) NSArray *memberPhotos;
-@property (strong, nonatomic) AddUserViewController* addUserVC;
+@property (nonatomic, strong) NSMutableArray *memberNames;
+@property (nonatomic, strong) NSMutableArray *memberPhotos;
+@property (nonatomic, strong) AddUserViewController* addUserVC;
+
+// Outlets
+@property (strong, nonatomic) IBOutlet UITableView *memberTbl;
+
 
 // Actions
 - (IBAction)addUserPressed:(id)sender;

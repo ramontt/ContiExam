@@ -177,20 +177,40 @@
             </objects>
             <point key="canvasLocation" x="402" y="1186"/>
         </scene>
-        <!--View Controller-->
+        <!--Maps View Controller-->
         <scene sceneID="Hkb-Ow-217">
             <objects>
-                <viewController id="mkU-mC-EMI" sceneMemberID="viewController">
+                <viewController id="mkU-mC-EMI" customClass="GMapsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g8d-JX-R0M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="T06-A5-gal" userLabel="vMap">
+                                <rect key="frame" x="0.0" y="57" width="320" height="511"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eOB-13-MrM">
+                                <rect key="frame" x="214" y="19" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Marker">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addMarkerPressed:" destination="mkU-mC-EMI" eventType="touchUpInside" id="qfc-cp-kB1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="BZa-00-qCd"/>
+                    <connections>
+                        <outlet property="vMap" destination="T06-A5-gal" id="npI-rf-XmJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w1I-jk-yk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="1164"/>
+            <point key="canvasLocation" x="829" y="1186"/>
         </scene>
         <!--Conti Team Table View Controller-->
         <scene sceneID="vOV-2X-zFD">

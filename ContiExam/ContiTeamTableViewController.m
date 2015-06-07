@@ -30,7 +30,7 @@
     }
     else
     {
-        NSLog( @"[%ld] Names saved", [_memberNames count] );
+        NSLog( @"[%ld] Names saved", (unsigned long)[_memberNames count] );
     }
     
     if( !_imageCounter )
@@ -42,7 +42,7 @@
         for( NSString* photoName in defaultPhotos )
         {
             UIImage* img = [UIImage imageNamed: photoName];
-            NSString* imgName = [NSString stringWithFormat:@"%@%ld", IMAGE_PREFIX, _imageCounter];
+            NSString* imgName = [NSString stringWithFormat:@"%@%ld", IMAGE_PREFIX, (long)_imageCounter];
             
             [self saveImage:img withImageName: imgName];
             _imageCounter ++;
@@ -52,7 +52,7 @@
     }
     else
     {
-        NSLog( @"[%ld] Images saved", _imageCounter );
+        NSLog( @"[%ld] Images saved", (long)_imageCounter );
     }
     
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -61,7 +61,7 @@
     _memberPhotos = [[NSMutableArray alloc] init];
     for( NSInteger i = IMAGE_COUNTER_INIT_VALUE; i < _imageCounter; i++ )
     {
-        NSString* imgName = [NSString stringWithFormat:@"%@%ld", IMAGE_PREFIX, i];
+        NSString* imgName = [NSString stringWithFormat:@"%@%ld", IMAGE_PREFIX, (long)i];
         UIImage* img = [self loadImage: imgName];
         [_memberPhotos addObject: img];
     }
@@ -204,7 +204,7 @@
     // Add image to memory array
     [_memberPhotos addObject: image];
     // Save image
-    NSString* imgName = [NSString stringWithFormat:@"%@%ld", IMAGE_PREFIX, _imageCounter];
+    NSString* imgName = [NSString stringWithFormat:@"%@%ld", IMAGE_PREFIX, (long)_imageCounter];
     [self saveImage: image withImageName: imgName];
     _imageCounter ++;
     

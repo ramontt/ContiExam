@@ -18,17 +18,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    // Check if there is data saved for member names & images
+    _memberNames = [[[NSUserDefaults standardUserDefaults] arrayForKey: MEMBER_NAMES_KEY] mutableCopy];
+    _imageCounter = [[NSUserDefaults standardUserDefaults] integerForKey: IMAGE_COUNTER_KEY];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    if( !_memberNames )
+    {
+        NSLog( @"There are no names saved" );
+        _memberNames = [[NSMutableArray alloc] initWithObjects: @"Richter Belmont", @"Maria Renard", @"Alucard Fahrenheit", nil];
+        [[NSUserDefaults standardUserDefaults] setObject:_memberNames forKey: MEMBER_NAMES_KEY];
+    }
+    else
+    {
+        NSLog( @"[%ld] Names saved", [_memberNames count] );
+    }
     
-    _memberNames = [[NSMutableArray alloc] initWithObjects: @"Richter", @"Maria", @"Alucard", nil];
+    if( !_imageCounter )
+    {
+        NSLog( @"There are no images saved" );
+        _imageCounter = IMAGE_COUNTER_INIT_VALUE;
+        NSMutableArray* defaultPhotos = [[NSMutableArray alloc] initWithObjects: @"richter.jpg", @"maria.jpg", @"alucard.jpg", nil];
+        
+        for( NSString* photoName in defaultPhotos )
+        {
+            UIImage* img = [UIImage imageNamed: photoName];
+            NSString* imgName = [NSString stringWithFormat:@"%@%ld", IMAGE_PREFIX, _imageCounter];
+            
+            [self saveImage:img withImageName: imgName];
+            _imageCounter ++;
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setInteger:_imageCounter forKey: IMAGE_COUNTER_KEY];
+    }
+    else
+    {
+        NSLog( @"[%ld] Images saved", _imageCounter );
+    }
     
-    _memberPhotos = [[NSMutableArray alloc] initWithObjects: @"richter.jpg", @"maria.jpg", @"alucard.jpg", nil];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
-    _addUserVC = [self.storyboard instantiateViewControllerWithIdentifier:@"AddUserViewController"];
+    // Load images
+    _memberPhotos = [[NSMutableArray alloc] init];
+    for( NSInteger i = IMAGE_COUNTER_INIT_VALUE; i < _imageCounter; i++ )
+    {
+        NSString* imgName = [NSString stringWithFormat:@"%@%ld", IMAGE_PREFIX, i];
+        UIImage* img = [self loadImage: imgName];
+        [_memberPhotos addObject: img];
+    }
+    
+    _addUserVC = [self.storyboard instantiateViewControllerWithIdentifier: @"AddUserViewController"];
     _addUserVC.delegate = self;
 }
 
@@ -60,7 +98,7 @@
     long row = [indexPath row];
     
     cell.lblMemberName.text = _memberNames[row];
-    //cell.imgMemberPhoto.image = [UIImage imageNamed: _memberPhotos[row]];
+    cell.imgMemberPhoto.image = _memberPhotos[row];
     
     return cell;
 }
@@ -122,14 +160,60 @@
     }
 }
 
+#pragma mark - Image Utileries
+
+-(void)saveImage:(UIImage*)image withImageName:(NSString*)imageName
+{
+    NSData *imageData = UIImageJPEGRepresentation( image, 1.0 ); // Convert image into .jpeg format.
+    NSFileManager *fileManager = [NSFileManager defaultManager]; // Create instance of NSFileManager
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); // Create an array and store result of our search for the documents directory in it
+    
+    NSString *documentsDirectory = [paths objectAtIndex:0]; // Create NSString object, that holds our exact path to the documents directory
+    
+    NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpeg", imageName]]; // Add our image to the path
+    
+    [fileManager createFileAtPath:fullPath contents:imageData attributes:nil]; // Finally save the path (image)
+}
+
+-(UIImage*)loadImage:(NSString*)imageName
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *fullPath = [documentsDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpeg", imageName]];
+    
+    return [UIImage imageWithContentsOfFile:fullPath];
+    
+}
+
 #pragma mark - AddUserControllerDelegate
 
 -(void) addNewMemberWithName:(NSString *)name andImage:(UIImage *)image
 {
     NSLog( @"New member name: %@", name );
+    
+    if( !name || [name length] == 0 || !image )
+    {
+        return;
+    }
+    
+    // Add name to memory array
     [_memberNames addObject: name];
+    
+    // Add image to memory array
+    [_memberPhotos addObject: image];
+    // Save image
+    NSString* imgName = [NSString stringWithFormat:@"%@%ld", IMAGE_PREFIX, _imageCounter];
+    [self saveImage: image withImageName: imgName];
+    _imageCounter ++;
+    
     [_memberTbl reloadData];
-    #pragma unused( image )
+    
+    // Save data
+    [[NSUserDefaults standardUserDefaults] setObject:_memberNames forKey: MEMBER_NAMES_KEY];
+    [[NSUserDefaults standardUserDefaults] setInteger:_imageCounter forKey: IMAGE_COUNTER_KEY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end

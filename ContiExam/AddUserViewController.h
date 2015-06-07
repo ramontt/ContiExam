@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIImageView *memberImg;
 @property (weak, nonatomic) id <AddUserControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UIView *popUpView;
 
 
 // Actions

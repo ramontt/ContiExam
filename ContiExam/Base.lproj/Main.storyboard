@@ -36,7 +36,7 @@
                 <pageViewController storyboardIdentifier="IntroPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="I2d-nx-owM" userLabel="Intro Page View Controller" customClass="IntroPageViewController" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ube-dk-9pG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="1831"/>
+            <point key="canvasLocation" x="814" y="1831"/>
         </scene>
         <!--Content Page View Controller-->
         <scene sceneID="Rjj-V1-WeE">
@@ -177,7 +177,7 @@
             </objects>
             <point key="canvasLocation" x="402" y="1186"/>
         </scene>
-        <!--Maps View Controller-->
+        <!--Maps-->
         <scene sceneID="Hkb-Ow-217">
             <objects>
                 <viewController id="mkU-mC-EMI" customClass="GMapsViewController" sceneMemberID="viewController">
@@ -203,7 +203,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="BZa-00-qCd"/>
+                    <tabBarItem key="tabBarItem" title="Maps" image="maps_32.png" id="BZa-00-qCd"/>
                     <connections>
                         <outlet property="vMap" destination="T06-A5-gal" id="npI-rf-XmJ"/>
                     </connections>
@@ -222,7 +222,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memberTableCell" rowHeight="64" id="Kir-fz-Tva" customClass="MemberTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kir-fz-Tva" id="gCB-Qc-kjG">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
@@ -314,6 +314,7 @@
     </scenes>
     <resources>
         <image name="continental_horse_black_32.png" width="32" height="32"/>
+        <image name="maps_32.png" width="35" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

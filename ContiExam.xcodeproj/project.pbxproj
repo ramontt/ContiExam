@@ -40,6 +40,7 @@
 		8BC518491B24B3D100C23EA6 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC518481B24B3D100C23EA6 /* libz.dylib */; };
 		8BC5184B1B24B3DF00C23EA6 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC5184A1B24B3DF00C23EA6 /* libicucore.dylib */; };
 		8BC5184D1B24B3EC00C23EA6 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BC5184C1B24B3EC00C23EA6 /* libc++.dylib */; };
+		8BC5184F1B2515BB00C23EA6 /* maps_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BC5184E1B2515BB00C23EA6 /* maps_32.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		8BC518481B24B3D100C23EA6 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8BC5184A1B24B3DF00C23EA6 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		8BC5184C1B24B3EC00C23EA6 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		8BC5184E1B2515BB00C23EA6 /* maps_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maps_32.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 		8B6A515A1B1B0DBF00E86CF3 /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				8BC5184E1B2515BB00C23EA6 /* maps_32.png */,
 				8B6A51701B1BC7C900E86CF3 /* alucard.jpg */,
 				8B6A51711B1BC7C900E86CF3 /* maria.jpg */,
 				8B6A51721B1BC7C900E86CF3 /* richter.jpg */,
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BC518471B24B39600C23EA6 /* GoogleMaps.bundle in Resources */,
+				8BC5184F1B2515BB00C23EA6 /* maps_32.png in Resources */,
 				8B6A51361B1A823B00E86CF3 /* Main.storyboard in Resources */,
 				8B6A51741B1BC7C900E86CF3 /* maria.jpg in Resources */,
 				8B6A513B1B1A823B00E86CF3 /* LaunchScreen.xib in Resources */,

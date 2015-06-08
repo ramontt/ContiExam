@@ -8,6 +8,13 @@
 
 #import "GMapsViewController.h"
 
+typedef enum : NSUInteger {
+    NoTextField = 0,
+    LatitudeTextField,
+    LongitudeTextField,
+    MarkerDescTextField,
+} NewMarkerTextFields;
+
 @interface GMapsViewController ()
 
 @end
@@ -66,23 +73,58 @@
 
 - (IBAction)addMarkerPressed:(id)sender
 {
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"New Marker"
-                                                     message:@"Enter Latitude & Longitude"
-                                                    delegate:self
-                                           cancelButtonTitle:@"Cancel"
-                                           otherButtonTitles:@"OK", nil];
+//    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"New Marker"
+//                                                     message:@"Enter Latitude & Longitude"
+//                                                    delegate:self
+//                                           cancelButtonTitle:@"Cancel"
+//                                           otherButtonTitles:@"OK", nil];
+//    
+//    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+//    UITextField* alertTextField1 = [alert textFieldAtIndex:0];
+//    alertTextField1.keyboardType = UIKeyboardTypeDecimalPad;
+//    alertTextField1.placeholder = @"Latitude";
+//    
+//    UITextField* alertTextField2 = [alert textFieldAtIndex:1];
+//    alertTextField2.keyboardType = UIKeyboardTypeDecimalPad;
+//    alertTextField2.placeholder = @"Longitude";
+//    alertTextField2.secureTextEntry = NO;
+//    
+//    [alert show];
     
-    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    UITextField* alertTextField1 = [alert textFieldAtIndex:0];
-    alertTextField1.keyboardType = UIKeyboardTypeDecimalPad;
-    alertTextField1.placeholder = @"Latitude";
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 250, 100)];
     
-    UITextField* alertTextField2 = [alert textFieldAtIndex:1];
-    alertTextField2.keyboardType = UIKeyboardTypeDecimalPad;
-    alertTextField2.placeholder = @"Longitude";
-    alertTextField2.secureTextEntry = NO;
+    UITextField *textField1 = [[UITextField alloc] initWithFrame:CGRectMake(10,0,252,25)];
+    textField1.borderStyle = UITextBorderStyleRoundedRect;
+    textField1.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    textField1.placeholder = @"Latitude";
+    textField1.keyboardAppearance = UIKeyboardAppearanceAlert;
+    textField1.delegate = self;
+    textField1.tag = LatitudeTextField;
+    [v addSubview:textField1];
     
-    [alert show];
+    UITextField *textField2 = [[UITextField alloc] initWithFrame:CGRectMake(10,30,252,25)];
+    textField2.placeholder = @"Longitude";
+    textField2.borderStyle = UITextBorderStyleRoundedRect;
+    textField2.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    textField2.keyboardAppearance = UIKeyboardAppearanceAlert;
+    textField2.delegate = self;
+    textField2.tag = LongitudeTextField;
+    [v addSubview:textField2];
+    
+    
+    UITextField *textField3 = [[UITextField alloc] initWithFrame:CGRectMake(10,60,252,25)];
+    textField3.placeholder = @"Marker Description";
+    textField3.borderStyle = UITextBorderStyleRoundedRect;
+    textField3.keyboardType = UIKeyboardTypeDefault;
+    textField3.keyboardAppearance = UIKeyboardAppearanceAlert;
+    textField3.delegate = self;
+    textField3.tag = MarkerDescTextField;
+    [v addSubview:textField3];
+    
+    
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"New Marker" message:@"Enter Latitude & Longitude" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    [av setValue:v  forKey:@"accessoryView"];
+    [av show];
 }
 
 - (void) addNewMarkerAt: (CLLocationCoordinate2D)coord withTitle: (NSString*) title andSnippet: (NSString*) snippet
@@ -100,13 +142,41 @@
 {
     if (buttonIndex == 1)
     {
-        UITextField* latTxt = [alertView textFieldAtIndex:0];
-        UITextField *lonTxt = [alertView textFieldAtIndex:1];
+        NSLog( @"Will add new marker ..." );
         
-        double latitude = [latTxt.text doubleValue];
-        double longitude = [lonTxt.text doubleValue];
-        
-        [self addNewMarkerAt:CLLocationCoordinate2DMake( latitude, longitude ) withTitle:@"New Title" andSnippet:@"New Snippet"];
+        [self addNewMarkerAt:CLLocationCoordinate2DMake( _latitude, _longitude ) withTitle:_markerDesc andSnippet:@""];
     }
 }
+
+#pragma mark - Text Field Delegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    switch( textField.tag )
+    {
+        case LatitudeTextField:
+        {
+            NSLog(@"Latitude [%@]", textField.text);
+            _latitude = [textField.text doubleValue];
+            break;
+        }
+        case LongitudeTextField:
+        {
+            NSLog(@"Longitud [%@]", textField.text);
+            _longitude= [textField.text doubleValue];
+            break;
+        }
+        case MarkerDescTextField:
+        {
+            NSLog(@"Marker Description [%@]", textField.text);
+            _markerDesc = textField.text;
+            break;
+        }
+        default:
+        {
+            break;
+        }
+    }
+}
+
 @end

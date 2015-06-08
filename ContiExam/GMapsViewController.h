@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface GMapsViewController : UIViewController <GMSMapViewDelegate>
+@interface GMapsViewController : UIViewController <GMSMapViewDelegate, UITextFieldDelegate>
 
 // Outlets
 @property (weak, nonatomic) IBOutlet UIView *vMap;
+@property double latitude;
+@property double longitude;
+@property NSString* markerDesc;
 
 // Actions
 - (IBAction)addMarkerPressed:(id)sender;

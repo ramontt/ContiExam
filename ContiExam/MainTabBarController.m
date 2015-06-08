@@ -20,7 +20,7 @@
     // Create page view controller
     _basePageVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BasePageViewController"];
     
-    _introShown = YES;
+    _introShown = NO;
 }
 
 - (void) viewDidAppear:(BOOL)animated

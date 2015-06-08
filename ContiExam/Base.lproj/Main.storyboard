@@ -161,17 +161,41 @@
             </objects>
             <point key="canvasLocation" x="402" y="2481"/>
         </scene>
-        <!--View Controller-->
+        <!--Bluetooth-->
         <scene sceneID="e0N-J8-hgP">
             <objects>
-                <viewController id="9NF-Dd-l9F" sceneMemberID="viewController">
+                <viewController id="9NF-Dd-l9F" customClass="CentralBTViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mO3-Qu-ry5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for Bluetooth data ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bGo-ci-QwP">
+                                <rect key="frame" x="8" y="124" width="304" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="soE-Mg-bhT">
+                                <rect key="frame" x="16" y="171" width="288" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="kRa-y4-vUx">
+                                <rect key="frame" x="150" y="274" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="xE9-0G-n8U"/>
+                    <tabBarItem key="tabBarItem" title="Bluetooth" image="bt_32.png" id="xE9-0G-n8U"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="kRa-y4-vUx" id="4Kc-e9-Dx8"/>
+                        <outlet property="lblStatus" destination="bGo-ci-QwP" id="oyh-mC-bkD"/>
+                        <outlet property="txtDataReceived" destination="soE-Mg-bhT" id="3WI-9R-Hh7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdI-CQ-hDF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -222,7 +246,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memberTableCell" rowHeight="64" id="Kir-fz-Tva" customClass="MemberTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kir-fz-Tva" id="gCB-Qc-kjG">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
@@ -313,6 +337,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bt_32.png" width="32" height="32"/>
         <image name="continental_horse_black_32.png" width="32" height="32"/>
         <image name="maps_32.png" width="35" height="32"/>
     </resources>

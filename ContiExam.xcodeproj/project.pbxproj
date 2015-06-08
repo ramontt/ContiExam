@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B14077E1B2523A800EB1FA9 /* bt_32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B14077D1B2523A800EB1FA9 /* bt_32.png */; };
+		8B1407821B25262A00EB1FA9 /* CentralBTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B1407811B25262A00EB1FA9 /* CentralBTViewController.m */; };
+		8B1407841B25273400EB1FA9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1407831B25273400EB1FA9 /* CoreBluetooth.framework */; };
+		8B1407861B25408300EB1FA9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1407851B25408300EB1FA9 /* Accounts.framework */; };
+		8B1407881B25408A00EB1FA9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1407871B25408A00EB1FA9 /* Social.framework */; };
+		8B14078A1B254A1D00EB1FA9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B1407891B254A1D00EB1FA9 /* MessageUI.framework */; };
 		8B6A512D1B1A823B00E86CF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A512C1B1A823B00E86CF3 /* main.m */; };
 		8B6A51301B1A823B00E86CF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6A512F1B1A823B00E86CF3 /* AppDelegate.m */; };
 		8B6A51361B1A823B00E86CF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B6A51341B1A823B00E86CF3 /* Main.storyboard */; };
@@ -54,6 +60,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B14077D1B2523A800EB1FA9 /* bt_32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bt_32.png; sourceTree = "<group>"; };
+		8B1407801B25262A00EB1FA9 /* CentralBTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CentralBTViewController.h; sourceTree = "<group>"; };
+		8B1407811B25262A00EB1FA9 /* CentralBTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CentralBTViewController.m; sourceTree = "<group>"; };
+		8B1407831B25273400EB1FA9 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		8B1407851B25408300EB1FA9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		8B1407871B25408A00EB1FA9 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		8B1407891B254A1D00EB1FA9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8B6A51271B1A823B00E86CF3 /* ContiExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContiExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6A512B1B1A823B00E86CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B6A512C1B1A823B00E86CF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,6 +121,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B14078A1B254A1D00EB1FA9 /* MessageUI.framework in Frameworks */,
+				8B1407881B25408A00EB1FA9 /* Social.framework in Frameworks */,
+				8B1407861B25408300EB1FA9 /* Accounts.framework in Frameworks */,
+				8B1407841B25273400EB1FA9 /* CoreBluetooth.framework in Frameworks */,
 				8BC5184D1B24B3EC00C23EA6 /* libc++.dylib in Frameworks */,
 				8BC5184B1B24B3DF00C23EA6 /* libicucore.dylib in Frameworks */,
 				8BC518491B24B3D100C23EA6 /* libz.dylib in Frameworks */,
@@ -134,9 +151,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B14077F1B25253000EB1FA9 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				8B1407801B25262A00EB1FA9 /* CentralBTViewController.h */,
+				8B1407811B25262A00EB1FA9 /* CentralBTViewController.m */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
 		8B6A511E1B1A823B00E86CF3 = {
 			isa = PBXGroup;
 			children = (
+				8B1407891B254A1D00EB1FA9 /* MessageUI.framework */,
+				8B1407871B25408A00EB1FA9 /* Social.framework */,
+				8B1407851B25408300EB1FA9 /* Accounts.framework */,
+				8B1407831B25273400EB1FA9 /* CoreBluetooth.framework */,
 				8BC5184C1B24B3EC00C23EA6 /* libc++.dylib */,
 				8BC5184A1B24B3DF00C23EA6 /* libicucore.dylib */,
 				8BC518481B24B3D100C23EA6 /* libz.dylib */,
@@ -210,6 +240,7 @@
 		8B6A51501B1ABA0400E86CF3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8B14077F1B25253000EB1FA9 /* Bluetooth */,
 				8BC518401B24AF9300C23EA6 /* Maps */,
 				8B6A51691B1BB33800E86CF3 /* ContiTeam */,
 				8B6A515D1B1B186200E86CF3 /* Intro */,
@@ -222,6 +253,7 @@
 		8B6A515A1B1B0DBF00E86CF3 /* imgs */ = {
 			isa = PBXGroup;
 			children = (
+				8B14077D1B2523A800EB1FA9 /* bt_32.png */,
 				8BC5184E1B2515BB00C23EA6 /* maps_32.png */,
 				8B6A51701B1BC7C900E86CF3 /* alucard.jpg */,
 				8B6A51711B1BC7C900E86CF3 /* maria.jpg */,
@@ -396,6 +428,7 @@
 				8B6A513B1B1A823B00E86CF3 /* LaunchScreen.xib in Resources */,
 				8B6A51751B1BC7C900E86CF3 /* richter.jpg in Resources */,
 				8B6A51731B1BC7C900E86CF3 /* alucard.jpg in Resources */,
+				8B14077E1B2523A800EB1FA9 /* bt_32.png in Resources */,
 				8B6A51681B1BB04400E86CF3 /* continental_horse_black_32.png in Resources */,
 				8B6A515C1B1B0DBF00E86CF3 /* continental_logo.png in Resources */,
 				8B6A51381B1A823B00E86CF3 /* Images.xcassets in Resources */,
@@ -425,6 +458,7 @@
 				8B6A51601B1B19B200E86CF3 /* BasePageViewController.m in Sources */,
 				8BC518431B24AFC700C23EA6 /* GMapsViewController.m in Sources */,
 				8B6A51591B1AF50500E86CF3 /* IntroPageViewController.m in Sources */,
+				8B1407821B25262A00EB1FA9 /* CentralBTViewController.m in Sources */,
 				8B9687BF1B22B573000A76A4 /* AddUserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

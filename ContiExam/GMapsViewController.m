@@ -41,17 +41,14 @@ typedef enum : NSUInteger {
 //    marker.title = @"Sydney";
 //    marker.snippet = @"Australia";
 //    marker.map = mapView_;
-
+    
     // Maps
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: -33.86
-                                                            longitude: 151.20
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude: 19.3907336
+                                                            longitude: -99.1436126
                                                                  zoom: 6];
     mapView_                    = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled  = YES;
     mapView_.frame              = CGRectMake(0, 0, self.vMap.frame.size.width, self.vMap.frame.size.height);
-    
-    // Creates a marker in the center of the map.
-    [self addNewMarkerAt:CLLocationCoordinate2DMake(-33.86, 151.20) withTitle:@"Continental Automotive" andSnippet:@"Tlaquepaque"];
     
     [self.vMap addSubview:mapView_];
 }

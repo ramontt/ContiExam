@@ -20,7 +20,7 @@
 
     // Initialize page titles
     _pageTopTexts = @[@"EXAMEN", @"NOMBRES", @"SUERTE!"];
-    _pageTexts1 = @[@"31/May/2015", @"Oscar Camacho", @"What a good night,"];
+    _pageTexts1 = @[@"7/Jun/2015", @"Oscar Camacho", @"What a good night,"];
     _pageTexts2 = @[@"", @"Ramon Garcia", @"to have a curse ..."];
     _pageImageNames = @[@"continental_logo.png", @"", @""];
     _pageBtnSkipTexts = @[@"Skip", @"Skip", @"OK!"];
